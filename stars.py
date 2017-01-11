@@ -24,3 +24,24 @@ def draw_stars2(my_list):
         print output
 
 draw_stars2(y)
+
+#!/usr/bin/env python
+
+def printAndReturnNothing():
+    x = "hello"
+    print x
+
+def printAndReturn():
+    x = "hello"
+    print x # print (x) returns a tuple
+    return x
+
+def main():
+    ret = printAndReturn()
+    other = printAndReturnNothing()
+
+    print("ret is: %s" % ret)
+    print("other is: %s" % other)
+
+if __name__ == "__main__":
+    main()
