@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zxx">
+<head>
+  <meta charset="utf-8">
+  <title>Connections Friends</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" crossorigin="anonymous">
+  <!-- LOAD CUSTOM CSS BELOW -->
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main.css')}}" media="screen">
+  <style media="screen">
+    body {background-color: gray;
+          color: whitesmoke;
+          }
+  </style>
+</head>
+<body>
+
+  <!-- {{ all_friends }} -->
+  <h1>These are my friends</h1>
+  <!-- with all the data we can then construct a more structured output -->
+  {% for friend in allfriends: %}
+     <p>ID: {{ friend['id'] }}</p>
+     <p>First Name: {{ friend['first_name'] }}</p>
+     <p>Last Name: {{ friend['last_name'] }}</p>
+     <p>Last Online: {{ friend['updated_at'] }}</p>
+     <hr>
+  {% endfor %}
+
+<p>{{testinfo}}</p>
+  <!-- <p>{{testinfo}}</p>
+  <p>{{all_friends}}</p> -->
+  <script src="{{url_for('static', filename='js/main.js')}}"></script>
+</body>
+</html>
